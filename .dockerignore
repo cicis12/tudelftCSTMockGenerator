@@ -1,0 +1,13 @@
+.git
+.venv
+.env
+*.db
+__pycache__
+.pytest_cache
+node_modules
+artifacts
+tests
+context/extracted
+sources/brochure.pdf
+sources/textbook.pdf
+sources/syllabus.pdf

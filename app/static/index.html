@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087e8b">
+  <meta name="description" content="Independent TU Delft CST practice. Build confidence in mathematics and logical reasoning with timed mocks and instant-feedback practice.">
+  <title>CST Studio · A little more prepared.</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/app.css">
+  <link rel="stylesheet" href="/static/vendor/katex.min.css">
+  <script defer src="/static/vendor/katex.min.js"></script>
+  <script defer src="/static/vendor/auto-render.min.js"></script>
+  <script defer src="/static/accounts.js"></script>
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="shell flex items-center justify-between gap-4 py-5">
+      <a href="/" class="flex items-center gap-3" aria-label="CST Studio home"><span class="logo">cst<span>↗</span></span><span class="brand-name">CST<span class="font-normal text-slate-500"> Studio</span></span></a>
+      <nav class="flex items-center gap-3 sm:gap-5 text-sm" aria-label="Main navigation"><a href="/#practice" class="nav-link">Practice</a><a href="/#resources" class="nav-link hidden sm:inline">Resources</a><button id="account-button" class="account-button" data-action="account" aria-label="Sign in to sync progress"><span aria-hidden="true">↗</span><span>Sign in</span></button><a href="/admin" class="admin-link">Admin <span aria-hidden="true">↗</span></a></nav>
+    </div>
+  </header>
+  <main id="main" class="shell min-h-[70vh]"><div class="py-20 text-slate-500" role="status">Opening your workspace…</div></main>
+  <footer class="shell mt-16 mb-8 border-t border-slate-200 pt-6 flex flex-wrap gap-4 justify-between text-xs text-slate-500"><p>Made for the next step. <span class="text-teal">↗</span> <a href="/admin" class="ml-3 hover:text-teal">Admin workspace</a></p><p>Independent practice tool. Not affiliated with or endorsed by TU Delft.</p></footer>
+  <div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+  <dialog id="modal" class="modal"><div id="modal-content"></div></dialog>
+</body>
+</html>

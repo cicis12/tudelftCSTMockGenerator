@@ -1,0 +1,11 @@
+# Systematic Reasoning & Logical Thinking generation context
+Primary authority: sources/brochure.pdf printed p.10 directs preparation to Chapter 2 of Delftse Foundations of Computation (S. Hugtenburg and N. Yorke-Smith, 2022, second edition), skipping starred subsections. sources/textbook.pdf includes the contents and Chapter 2. Reviewed 2026-10-29. Duration: 45 minutes.
+
+Allowed topic labels:
+- Propositional logic: §2.1.1–2.1.10, propositions, operators (not/and/or/implication/biconditional/xor), precedence, truth tables, equivalence, translation of English implications, converse/inverse/contrapositive, universal operators, tautology/contradiction/contingency and satisfiability.
+- Boolean algebra: §2.2.1–2.2.4, Boolean operations, substitution, equivalence laws, simplification, distributivity, De Morgan, absorption and dual expressions.
+- Disjunctive normal form: §2.3.4, literals, conjunctions of literals, disjunctions of conjunctions, construction from truth tables and equivalent normal forms. This subsection is NOT starred and is included despite adjacent circuit subsections being excluded.
+- Predicate logic: §2.4.1–2.4.5, predicates, explicit domains, universal/existential quantifiers, free/bound variables, scope, nested quantifiers, negations, interpretation of formal structures/Tarski-style worlds, equivalence and translation. Supply textual structures rather than requiring external pictures. State whether a domain is empty where it matters.
+- Deduction: §2.5.1–2.5.3, arguments, validity versus truth, countermodels, elementary inference rules (modus ponens/tollens, conjunction and disjunction rules, hypothetical syllogism), universal instantiation and sound quantified reasoning. An existential witness cannot be generalized arbitrarily.
+
+Explicitly EXCLUDED starred subsections: §2.3.1 Logic gates, §2.3.2 Combining gates to create circuits, §2.3.3 From circuits to propositions, §2.3.5 Binary addition. Do not require circuit symbols, hardware design or binary arithmetic. Do not extend the assessed scope to chapters 3 onward. Use Unicode logical symbols consistently and state definitions. Formal validity means no assignment/structure makes every premise true and the conclusion false.

@@ -1,0 +1,11 @@
+{
+  "name": "cst-studio",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./app/static/input.css -o ./app/static/app.css --minify && node scripts/copy-vendor.mjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17",
+    "katex": "0.16.22"
+  }
+}

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper text-ink antialiased; font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+  button { @apply transition-colors; }
+  button:disabled { @apply opacity-50 cursor-not-allowed; }
+  :focus-visible { @apply outline outline-2 outline-offset-4 outline-teal; }
+  input, select, textarea { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm; }
+  label { @apply text-sm font-medium; }
+  h1, h2, h3 { @apply tracking-tight; }
+}
+@layer components {
+  .shell { @apply mx-auto max-w-6xl px-5 sm:px-8; }
+  .site-header { @apply bg-white/90 border-b border-slate-200; }
+  .logo { @apply rounded-xl bg-teal text-white text-xl font-bold w-11 h-11 flex items-center justify-center; letter-spacing: -2px; }
+  .logo span { @apply text-xs self-start mt-2; }
+  .brand-name { @apply text-lg font-semibold tracking-tight; }
+  .nav-link { @apply text-slate-600 hover:text-teal; }
+  .admin-link { @apply border border-slate-200 rounded-lg px-3 py-2 hover:border-teal; }
+  .eyebrow { @apply text-xs uppercase font-semibold text-teal tracking-[0.16em]; }
+  .card { @apply bg-white border border-slate-200 rounded-2xl; box-shadow: 0 3px 12px #18282e03; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold; }
+  .btn-primary { @apply btn bg-teal text-white hover:bg-[#066b76]; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white hover:bg-slate-50; }
+  .btn-quiet { @apply btn text-slate-500 hover:text-ink hover:bg-slate-100; }
+  .pill { @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600; }
+  .choice-card { @apply relative text-left rounded-xl border border-slate-200 p-5 bg-white hover:border-teal; }
+  .choice-card.selected { @apply border-teal bg-[#f0faf9] ring-1 ring-teal; }
+  .radio-dot { @apply w-4 h-4 rounded-full border border-slate-300 absolute right-4 top-4; }
+  .selected .radio-dot { @apply border-[5px] border-teal bg-white; }
+  .tile-icon { @apply w-10 h-10 rounded-xl flex items-center justify-center text-xl mb-5 bg-slate-100 text-slate-600; }
+  .selected .tile-icon { @apply bg-[#d8efec] text-teal; }
+  .step-dot { @apply rounded-full border border-slate-200 w-6 h-6 flex items-center justify-center text-xs text-slate-500 font-medium; }
+  .step-title { @apply flex items-center gap-3 text-base font-semibold mb-4; }
+  .option { @apply flex gap-4 items-center text-left w-full rounded-xl border border-slate-200 p-4 hover:border-teal hover:bg-teal/5; }
+  .option.selected { @apply border-teal bg-teal/5 ring-1 ring-teal; }
+  .option.correct { @apply border-emerald-500 bg-emerald-50; }
+  .option.incorrect { @apply border-rose-400 bg-rose-50; }
+  .option:disabled { @apply opacity-100 cursor-default; }
+  .option > .flex-1 { min-width: 0; overflow-x: auto; overflow-wrap: anywhere; }
+  .option-key { @apply shrink-0 flex items-center justify-center rounded-lg border border-slate-200 w-8 h-8 text-xs font-semibold bg-white; }
+  .question-nav { @apply w-10 h-10 rounded-lg border border-slate-200 text-sm bg-white; }
+  .question-nav.answered { @apply bg-teal/10 text-teal border-teal/20; }
+  .question-nav.current { @apply ring-2 ring-teal ring-offset-2; }
+  .question-nav.flagged { @apply border-amber-400 border-2; }
+  .timer-bar { @apply sticky top-0 z-20 bg-paper/95 backdrop-blur py-4 flex flex-wrap gap-3 items-center justify-between border-b border-slate-200; }
+  .timer { @apply rounded-xl bg-ink text-white px-4 py-2 tabular-nums font-mono text-xl; }
+  .timer.urgent { @apply bg-rose-700; }
+  .formula-panel { @apply card p-5 lg:sticky lg:top-24; max-height: calc(100vh - 110px); overflow-y: auto; }
+  .formula-row { @apply border-b border-slate-100 py-3 text-sm overflow-x-auto; }
+  .toast { @apply fixed bottom-6 left-1/2 -translate-x-1/2 z-50 rounded-xl bg-ink text-white px-5 py-3 text-sm shadow-xl max-w-[92vw] w-max; }
+  .modal { @apply w-[min(92vw,620px)] rounded-2xl p-6 sm:p-8 shadow-xl text-ink; }
+  .modal::backdrop { background: #102f3b70; backdrop-filter: blur(3px); }
+  .skip-link { @apply fixed -top-20 left-4 focus:top-4 z-50 bg-white p-3 rounded-lg; }
+  .review-question { @apply card p-5 sm:p-7; }
+  .resource-link { @apply flex items-center justify-between gap-3 border-b border-slate-100 py-4 text-sm hover:text-teal; }
+  .katex-display { overflow-x: auto; overflow-y: hidden; padding: .3em 0; }
+  .question-copy { @apply text-lg leading-relaxed; overflow-wrap: anywhere; }
+  .grid-art { background-image: linear-gradient(#c7dfdd80 1px, transparent 1px), linear-gradient(90deg,#c7dfdd80 1px,transparent 1px); background-size: 24px 24px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+@media (max-width: 380px) { .site-header .nav-link { display: none; } }
+
+@layer components {
+  .account-button { @apply inline-flex items-center gap-2 rounded-full border border-teal/20 bg-[#eef7f5] px-3 py-2 text-sm font-semibold text-teal; }
+  .account-avatar { @apply inline-flex shrink-0 items-center justify-center rounded-full bg-teal text-white font-semibold w-6 h-6 text-xs; }
+  .account-nav-label { @apply max-w-24 truncate; }
+  .progress-panel { @apply rounded-2xl border border-[#d7e8e4] p-5 sm:p-7; background: linear-gradient(115deg, #eef6f3, #f6faf9 70%, #eaf3f5); }
+  .progress-mark { @apply flex shrink-0 items-center justify-center rounded-xl w-10 h-10 bg-white text-teal text-xl border border-teal/10; }
+  .progress-number { @apply text-3xl sm:text-4xl font-semibold tracking-tight tabular-nums; }
+  .progress-caption { @apply mt-2 text-xs text-slate-500 leading-relaxed; }
+  .account-tabs { @apply grid grid-cols-2 gap-1 bg-slate-100 rounded-xl p-1; }
+  .account-tabs button { @apply rounded-lg py-2.5 px-3 text-sm font-medium text-slate-500; }
+  .account-tabs .active { @apply bg-white text-teal shadow-sm; }
+}
+@media (max-width: 640px) {
+  .site-header .nav-link, .site-header .admin-link { display: none; }
+  .account-nav-label { max-width: 5rem; }
+  .account-button { font-size: .75rem; }
+}
+.readiness-progress { appearance: none; border: 0; border-radius: 99px; overflow: hidden; display: block; background: #e4eeeb; }
+.readiness-progress::-webkit-progress-bar { background: #e4eeeb; border-radius: 99px; }
+.readiness-progress::-webkit-progress-value { background: #087e8b; border-radius: 99px; }
+.readiness-progress::-moz-progress-bar { background: #087e8b; border-radius: 99px; }
