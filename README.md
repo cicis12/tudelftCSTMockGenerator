@@ -14,6 +14,10 @@ Open **http://localhost:8000**. The script builds the application, starts Postgr
 
 Open **http://localhost:8000/admin** and use `ADMIN_PASSWORD` from `.env`. Credentials are intentionally not printed into deployment logs. The default port can be changed with `APP_PORT` in `.env`.
 
+When run in a terminal, `./deploy.sh` asks whether to install and set up a **Cloudflare Tunnel**. Answer `y` for a step-by-step guide to creating a tunnel in the Cloudflare dashboard, pasting its token at a hidden prompt, and routing a public hostname to `http://app:8000`. You need a Cloudflare account and a domain managed by Cloudflare. The script installs the official `cloudflared` Docker container, starts it with the app, and enables secure cookies. Use your public **HTTPS** URL for logins. No inbound ports or router forwarding are required; the connector needs outbound access on port 7844. See the [Cloudflare setup guide](https://developers.cloudflare.com/tunnel/get-started/).
+
+The tunnel token is stored in the private, Git-ignored `.cloudflared.env`. Subsequent deployments offer to reuse it by default; answering `n` stops the existing connector and deploys locally. Non-interactive runs reuse a saved token or deploy locally if none exists. To replace a token, remove `.cloudflared.env` and rerun the guided setup. Manage a tunnel deployment with `docker compose -f compose.yml -f compose.tunnel.yml` (for example, append `logs --tail=100 cloudflared` or `down`). Keep the token file private alongside `.env`.
+
 For a public server with a domain pointing to it:
 
 ```sh

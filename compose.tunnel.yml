@@ -1,0 +1,16 @@
+services:
+  app:
+    environment:
+      COOKIE_SECURE: 'true'
+      FORWARDED_ALLOW_IPS: '*'
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    env_file: .cloudflared.env
+    depends_on:
+      app:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
